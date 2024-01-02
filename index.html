@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- ============== 輪播css ============== -->
+  <link rel="stylesheet" href="https://media.etmall.com.tw/sp/12500/swiper.min.css" />
+  <!-- ============== 共用css ============== -->
+  <link rel="stylesheet" href="https://media.etmall.com.tw/sp/12500/animate.min.css" />
+  <link rel="stylesheet" href="https://media.etmall.com.tw/sp/12500/generate_v1.5.5.css" />
+  <link rel="stylesheet" href="https://media.etmall.com.tw/sp/12500/build.css" />
+
+  <!-- [電梯步驟1] 電梯CSS 不用就關掉 -->
+  <!-- 商品左電梯CSS，要使用還要在步驟2開啟左電梯data資料 -->
+  <!-- <link id="localElevatorLeft" rel="stylesheet" href="sp-elevator-left.css"> -->
+
+  <!-- 商品右電梯CSS，步驟2有測試div可以測試 -->
+  <link id="localElevatorRight" rel="stylesheet" href="sp-elevator-right.css" />
+  <!-- [電梯步驟1] 電梯CSS END -->
+
+  <style>
+    body {
+      background-color: #f49600;
+    }
+
+    body:before {
+      background: url(bg-m.jpg) center 0 no-repeat;
+      background-size: 100%;
+    }
+
+    @media screen and (min-width: 960px) {
+      body:before {
+        background: url(bg.jpg) center 0 no-repeat;
+        background-size: auto;
+      }
+    }
+
+    /* 調整logo位置大小 */
+    /* .logo {
+        top: 1%;
+        left: 1%;
+        width: 30%;
+        max-width: 220px;
+      } */
+
+    /* --- 動畫小物件 --- */
+    .animate__wrap {
+      z-index: 1;
+    }
+
+    /*-- 手機版：設定物件距離左邊與上邊的位置，單位可以使用"%"或"vw";width:建議電腦版可以使用auto，手機版則可使用%調整 --*/
+    .animate__wrap .animate__obj--01 {
+      position: absolute;
+      pointer-events: none;
+      z-index: -1;
+      top: 17vw;
+      left: 16vw;
+      width: 68%;
+    }
+
+    /*-- 電腦版：設定物件距離左邊與上邊的位置，單位可以使用"px"，左邊可以挑整clac()後面的px值;width:建議電腦版可以使用auto，手機版則可使用%調整 --*/
+    @media screen and (min-width: 960px) {
+      .animate__wrap .animate__obj--01 {
+        pointer-events: none;
+        top: 165px;
+        left: calc(50% - 325px);
+        width: auto;
+      }
+    }
+
+
+
+    /* --- 動畫小物件 end --- */
+  </style>
+</head>
+<!-- 是否要固定背景，不要就拿掉class -->
+
+<body>
+  <div class="navRightBar" id="navRightBar"></div>
+  <div class="elevatorHome js--main--dialog" id="elevatorHome"></div>
+  <div id="barHome"></div>
+  <div class="home--icon layout--main" id="iconHome"></div>
+
+  <div class="sp__wallper" id="spWrap">
+
+
+    <div class="animate__wrap">
+      <img class="animate__animated animate__obj--01 animate__bounceIn" src="T.gif" alt="" />
+    </div>
+
+    <main class="sp__main">
+
+
+      <section class="sp__visual">
+        <div class="layout--main">
+          <ul class="visual--auto clearfix">
+            <li class="visual__fragment width--auto">
+              <a href="https://www.etmall.com.tw"><img src="index_01.jpg" alt="" /></a>
+            </li>
+            <li class="visual__fragment width--auto">
+              <img src="index_02.jpg" alt="" />
+            </li>
+            <li class="visual__fragment width--auto">
+              <a href="#note1"><img src="index_03.jpg" alt="" /></a>
+            </li>
+            <li class="visual__fragment width--auto">
+              <img src="index_04.jpg" alt="" />
+            </li>
+          </ul>
+
+        </div>
+      </section>
+    </main>
+
+
+
+    <!-- ============== 共用JS ============== -->
+    <script src="https://media.etmall.com.tw/sp/12500/jquery-3.6.0.min.js"></script>
+    <script src="https://media.etmall.com.tw/sp/12500/swiper.min.js"></script>
+    <script src="https://media.etmall.com.tw/sp/12500/generate_v1.5.5.js"></script>
+    <!--[電梯步驟2] 電梯 JS -->
+    <!-- 商品左電梯單機版資料，不用就關掉，要使用還要上方步驟1開啟商品左電梯CSS -->
+    <!-- <script id="dataElevatorLeft" src="data-elevator.js"></script> -->
+
+    <!-- 線上自動切換電梯，無論如何都要有 -->
+    <script id="checkElevator" src="https://media.etmall.com.tw/sp/11911/check-elevator.js"></script>
+    <!-- [電梯步驟2] 電梯 JS END -->
+
+    <!-- [測試區] -->
+    <!-- 測試商品右電梯用，上線前必須關掉 -->
+    <!-- <div data-title="ccc"></div> -->
+    <!-- 測試霸道電梯用，開啟時上方自動切換電梯要關閉，這支正式上線時需關閉、上方的要開啟回來 -->
+    <!-- <script id="checkElevator" src="https://media.etmall.com.tw/sp/14841/test-elevator.js?87"></script> -->
+
+
+
+
+</body>
+
+</html>
